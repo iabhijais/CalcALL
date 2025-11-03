@@ -25,6 +25,23 @@ body {
 
 .header { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
 .header h1 { margin: 0; font-size: 22px; font-weight: 700; }
+.project-attribution {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  text-align: left;
+  opacity: 0.95;
+}
+.project-attribution a {
+  color: inherit;
+  text-decoration: none;
+}
+.project-attribution a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
 .clock { color: var(--muted); font-size: 14px; }
 
 .mode-switch { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -106,6 +123,7 @@ body {
 @media (max-width: 720px) {
   .row { flex-direction: column; align-items: stretch; }
   .row label { width: auto; }
+  .project-attribution { text-align: center; }
 }
 
 
