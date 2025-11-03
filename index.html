@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All-in-One Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>All-in-One Calculator</h1>
+      <div class="clock" id="clock" aria-live="polite" title="Current time in Asia/Kolkata (IST)"></div>
+      <nav class="mode-switch" role="tablist" aria-label="Calculator modes">
+        <button class="mode-btn" data-mode="normal" role="tab" aria-selected="true">Normal</button>
+        <button class="mode-btn" data-mode="scientific" role="tab" aria-selected="false">Scientific</button>
+        <button class="mode-btn" data-mode="bmi" role="tab" aria-selected="false">BMI</button>
+        <button class="mode-btn" data-mode="age" role="tab" aria-selected="false">Age</button>
+        <button class="mode-btn" data-mode="currency" role="tab" aria-selected="false">Currency</button>
+      </nav>
+    </header>
+
+    <main class="panes">
+      <!-- Normal Calculator -->
+      <section id="pane-normal" class="pane" role="tabpanel" aria-labelledby="mode-normal">
+        <div class="calc">
+          <input id="normal-display" class="display" type="text" inputmode="numeric" aria-label="Normal calculator display" readonly>
+          <div class="keys grid grid-4">
+            <button data-key="C" class="key key-fn">C</button>
+            <button data-key="%" class="key key-op">%</button>
+            <button data-key="/" class="key key-op">÷</button>
+            <button data-key="⌫" class="key key-fn">⌫</button>
+
+            <button data-key="7" class="key">7</button>
+            <button data-key="8" class="key">8</button>
+            <button data-key="9" class="key">9</button>
+            <button data-key="*" class="key key-op">×</button>
+
+            <button data-key="4" class="key">4</button>
+            <button data-key="5" class="key">5</button>
+            <button data-key="6" class="key">6</button>
+            <button data-key="-" class="key key-op">−</button>
+
+            <button data-key="1" class="key">1</button>
+            <button data-key="2" class="key">2</button>
+            <button data-key="3" class="key">3</button>
+            <button data-key="+" class="key key-op">+</button>
+
+            <button data-key="0" class="key key-span-2">0</button>
+            <button data-key="." class="key">.</button>
+            <button data-key="=" class="key key-eq">=</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scientific Calculator -->
+      <section id="pane-scientific" class="pane hidden" role="tabpanel" aria-labelledby="mode-scientific">
+        <div class="calc">
+          <input id="sci-display" class="display" type="text" aria-label="Scientific calculator display" readonly>
+          <div class="keys grid grid-6">
+            <button data-key="C" class="key key-fn">C</button>
+            <button data-key="(" class="key">(</button>
+            <button data-key=")" class="key">)</button>
+            <button data-key="^" class="key key-op">x^y</button>
+            <button data-key="√" class="key">√</button>
+            <button data-key="⌫" class="key key-fn">⌫</button>
+
+            <button data-key="sin" class="key">sin</button>
+            <button data-key="cos" class="key">cos</button>
+            <button data-key="tan" class="key">tan</button>
+            <button data-key="log" class="key">log</button>
+            <button data-key="ln" class="key">ln</button>
+            <button data-key="!" class="key">n!</button>
+
+            <button data-key="7" class="key">7</button>
+            <button data-key="8" class="key">8</button>
+            <button data-key="9" class="key">9</button>
+            <button data-key="/" class="key key-op">÷</button>
+            <button data-key="%" class="key key-op">%</button>
+            <button data-key="=" class="key key-eq">=</button>
+
+            <button data-key="4" class="key">4</button>
+            <button data-key="5" class="key">5</button>
+            <button data-key="6" class="key">6</button>
+            <button data-key="*" class="key key-op">×</button>
+            <button data-key="-" class="key key-op">−</button>
+            <button data-key="+" class="key key-op">+</button>
+
+            <button data-key="1" class="key">1</button>
+            <button data-key="2" class="key">2</button>
+            <button data-key="3" class="key">3</button>
+            <button data-key="0" class="key key-span-2">0</button>
+            <button data-key="." class="key">.</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- BMI Calculator -->
+      <section id="pane-bmi" class="pane hidden" role="tabpanel" aria-labelledby="mode-bmi">
+        <form id="bmi-form" class="form">
+          <div class="row">
+            <label for="bmi-system">System</label>
+            <select id="bmi-system" aria-label="Measurement system">
+              <option value="metric">Metric (kg, cm)</option>
+              <option value="imperial">Imperial (lb, in)</option>
+            </select>
+          </div>
+          <div class="row">
+            <label for="bmi-weight">Weight</label>
+            <input id="bmi-weight" type="number" step="any" placeholder="e.g. 70">
+          </div>
+          <div class="row">
+            <label for="bmi-height">Height</label>
+            <input id="bmi-height" type="number" step="any" placeholder="e.g. 175">
+          </div>
+          <div class="row">
+            <button type="button" id="bmi-calc" class="btn">Calculate BMI</button>
+            <button type="button" id="bmi-clear" class="btn btn-secondary">Clear</button>
+          </div>
+          <div id="bmi-result" class="result" aria-live="polite"></div>
+        </form>
+      </section>
+
+      <!-- Age Calculator -->
+      <section id="pane-age" class="pane hidden" role="tabpanel" aria-labelledby="mode-age">
+        <form id="age-form" class="form">
+          <div class="row">
+            <label for="age-dob">Date of birth</label>
+            <input id="age-dob" type="text" inputmode="numeric" placeholder="dd/mm/yyyy" aria-describedby="age-help">
+          </div>
+          <div class="row">
+            <button type="button" id="age-calc" class="btn">Calculate Age</button>
+            <button type="button" id="age-clear" class="btn btn-secondary">Clear</button>
+          </div>
+          <div id="age-result" class="result" aria-live="polite"></div>
+        </form>
+      </section>
+
+      <!-- Currency Calculator -->
+      <section id="pane-currency" class="pane hidden" role="tabpanel" aria-labelledby="mode-currency">
+        <form id="fx-form" class="form">
+          <div class="row">
+            <label for="fx-amount">Amount</label>
+            <input id="fx-amount" type="number" step="any" placeholder="e.g. 100">
+          </div>
+          <div class="row grid grid-2 gap">
+            <div>
+              <label for="fx-from">From</label>
+              <select id="fx-from"></select>
+            </div>
+            <div>
+              <label for="fx-to">To</label>
+              <select id="fx-to"></select>
+            </div>
+          </div>
+          <div class="row">
+            <label for="fx-rate">Custom rate (To per From)</label>
+            <input id="fx-rate" type="number" step="any" placeholder="Optional: override rate">
+          </div>
+          <div class="row">
+            <label for="fx-preset">Preset rate (offline)</label>
+            <select id="fx-preset"></select>
+          </div>
+          <div class="row">
+            <button type="button" id="fx-convert" class="btn">Convert</button>
+            <button type="button" id="fx-swap" class="btn btn-secondary">Swap</button>
+          </div>
+          <div id="fx-result" class="result" aria-live="polite"></div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+  <noscript>This app requires JavaScript enabled.</noscript>
+  
+</body>
+</html>
+
+
