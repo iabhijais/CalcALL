@@ -1,20 +1,36 @@
-# All-in-One Calculator
+# 🧮 CalcALL — All-in-One Calculator  
 
-A single-page, offline-ready web app that includes:
+🧠 **CalcALL** is a simple yet powerful web calculator designed with **clean UI, modular code**, and quick performance in mind.  
+Built entirely with **vanilla JavaScript**, it focuses on usability and responsive design for all screen sizes.  
 
-- Normal calculator
-- Scientific calculator
-- BMI calculator (metric/imperial)
-- Age calculator
-- Currency converter (offline presets + custom rate)
+---
 
-## Run
+## ⚙️ Tech Stack  
+- **Language:** JavaScript (ES6+)  
+- **UI:** HTML5, CSS3  
+- **Deployment:** GitHub Pages *(optional — can add later)*  
 
-Open `index.html` in your browser. No build step required.
+---
 
-## Notes
+## 🧩 Features  
+✅ Basic arithmetic and percentage operations  
+✅ Modular and readable JavaScript structure  
+✅ Responsive layout for desktop and mobile  
+✅ Minimal and lightweight interface for quick performance  
 
-- Currency rates are offline presets; for live rates, wire to an API.
-- The last selected tool is remembered via localStorage.
+---
 
+## 🧠 Vision  
+A beginner-friendly project focusing on **clean coding practices, UI design**, and **responsive development fundamentals**.  
 
+---
+
+## 🧑‍💻 Developer  
+**Abhishek Jaisal**  
+AI-Enhanced Full Stack Developer | Founder of GameGrid.gg  
+📍 Noida, India  
+🔗 [LinkedIn](https://www.linkedin.com/in/iabhijais) • [GitHub](https://github.com/iabhijais)
+
+---
+
+⭐ **Star this repo if you found it useful!**
